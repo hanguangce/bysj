@@ -1,13 +1,13 @@
 product
 {
-id   
-ic   内码
-oc 原厂条形码
-pp	品牌
-pm	品名
-kh	 款号
-ty	类别
-jx	经销商
+id (key)  int  
+ic   内码 int
+oc 原厂条形码  int
+pp	品牌  string
+pm	品名  
+kh	 款号  
+ty	类别	
+jx	经销商 
 pn0	电话
 p0	手机
 prod	制造商
@@ -17,23 +17,23 @@ ph1	手机
 
 rep	仓库表
 {
-ic	内码
-ct	库存数量
-ct0	已销售数量
-mg	经办人
+ic	内码  (key)  int
+ct	库存数量    int
+ct0	已销售数量	int
+mg	经办人	
 }
 
 prices	价格表
 {
-ic	内码
-jp	进价
-bp	标价
-lr	利润
+ic	内码 (key)  int
+jp	进价   int
+bp	标价	int
+lr	利润	int
 }
 
 emtpys	员工信息表
 {
-eid	员工编码
+eid	员工编码  (key) int
 ename	姓名
 esex	性别
 eage	年龄
@@ -48,13 +48,13 @@ ecpn	联系人联系方式
 
 xsjl	销售记录
 {
-jylsh	交易流水号
-syy	收银员
-xsyg	销售员工
-jysj	交易时间
-jysl	交易数量
-jyje	交易金额
-lr	利润
+jylsh	交易流水号 int 
+syy	收银员  int 
+xsyg	销售员工 int
+jysj	交易时间 
+jysl	交易数量 int
+jyje	交易金额 int 
+lr	利润    int
 p1	商品1
 p2	商品2
 p3	商品3
