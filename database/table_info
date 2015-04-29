@@ -37,7 +37,7 @@ eid	员工编码  (key) int
 ename	姓名
 esex	性别
 eage	年龄
-emon	职位工资
+emon	职位工资   int
 eages	工龄
 ecot1	联系方式1
 ecot2	联系方式2
