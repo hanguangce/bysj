@@ -1,0 +1,95 @@
+del redundant class  and add five odbc_table_set classes 
+-----------------------------------------------------------
+kuguan mode{
+1\kuguan select     info
+select
+ic	内码  (key)  int
+ct	库存数量    int
+ct0	已销售数量	int
+mg	经办人
+
+oc 原厂条形码  int
+pp	品牌  string
+pm	品名  
+kh	 款号  
+ty	类别	
+
+
+kuguan select   info
+ic	内码  (key)  int
+ct	库存数量    int
+ct0	已销售数量	int
+mg	经办人
+
+oc 原厂条形码  int
+pp	品牌  string
+pm	品名  
+kh	 款号  
+ty	类别	
+ 
+ from priduct rep
+
+ where ct > 0 (m_edit_para) 
+		==
+		<
+or   ic =  m_edit_para	
+
+updata mode only updata rep
++: ct= ct + (int)m_edit_count
+-: ct= ct - (int)m_edit_count
+ct	库存数量    int  
+where  ic = (m_edit_)
+ic	内码  (key)  int 
+diolag_ 弹出对话框  产品编号（内码）   入货 （默认）或者出货  数量（m_edit） 
+
+}
+-----------------------------------------------------------------
+xsjl{
+new jl   ->tijiao
+		->quxiao
+						
+1\ init
+syy	 //	get  global syy_id  value = login eid   // global syy_id
+xsyg  key by syy  value from  m_edit_xsyg 
+	
+2\ add goods 
+	add  ten  buttons   ，which button pressed, show diolag from step 1  ,find one way mark which or count recoards   int attr[]={0,}
+or
+	one button for [ add buy product ]  var  for count_all =0 by count_all ++,when count_all <=10       {recomment way ,can simply for sum money}
+when  one  show 
+
+select
+ic   内码 int
+oc 原厂条形码  int
+pp	品牌  string
+pm	品名  string
+kh	款号  string
+ty	类别  string
+from  product where ic=  step 1 diolag  m_edit_productx [edit]
+	
+3\ show result  submit
+syy	
+xsyg
+jysl  value now equal 1
+jysj	CString fromat get syste_time().value 
+jyje	init =0 ,  jyje=+ ic.    // 
+show new diolag 
+ 
+4\ add info  to database
+insert 
+syy		收银员  int   	//	get  global syy_id 
+xsyg	销售员工 int
+jysj	交易时间 
+jysl	交易数量 int
+jyje	交易金额 int 
+p1	商品1  ic
+p2	商品1  ic
+into  table  xsjl
+
+p1	商品1  ic
+
+5\ new diolag  for new recoard
+}
+---------------------------------------------------------
+
+
