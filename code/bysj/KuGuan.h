@@ -6,10 +6,10 @@
 #endif // _MSC_VER > 1000
 // KuGuan.h : header file
 //
-#include "Diolag.h"
 /////////////////////////////////////////////////////////////////////////////
 // KuGuan dialog
-
+#include "databaseset.h"
+//#include "productset.h"
 class KuGuan : public CDialog
 {
 // Construction
@@ -44,7 +44,7 @@ protected:
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 
-	CDiolag m_recordset;
+	databaseset m_recordset;
 
 
 };

@@ -65,7 +65,7 @@ BOOL CBysjApp::InitInstance()
 #endif
 
 /////////////////////////////////////////////////////////
-AfxOleInit();
+//AfxOleInit();
 
 
 	SQLConfigDataSource(NULL,ODBC_ADD_DSN,
@@ -81,7 +81,7 @@ AfxOleInit();
 	CBysjDlg dlg;
 //	m_pMainWnd = &dlg;           //????
 
-Cdb mydb;
+//Cdb mydb;
 
 //CString str;
 //str.Format(_T("@@ %d"), mydb.vCount.intVal);

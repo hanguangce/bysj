@@ -2,35 +2,42 @@
 
 [General Info]
 Version=1
-LastClass=CDiolag
+LastClass=databaseset
 LastTemplate=CRecordset
 NewFileInclude1=#include "stdafx.h"
 NewFileInclude2=#include "bysj.h"
 
-ClassCount=9
+ClassCount=15
 Class1=CBysjApp
 Class2=CBysjDlg
 Class3=CAboutDlg
 
-ResourceCount=12
-Resource1=IDR_MENU1
+ResourceCount=13
+Resource1=IDD_ShouYinYuan
 Resource2=IDR_MAINFRAME
-Resource3=IDD_DianZhang
-Resource4=IDD_ABOUTBOX
-Resource5=IDD_KuGuan
-Resource6=IDD_DIALOG6
-Resource7=IDD_ShouYinYuan
-Resource8=IDD_DIALOG4
-Resource9=IDD_DIALOG5
-Resource10=IDD_BYSJ_DIALOG
+Resource3=IDD_DIALOG5
+Resource4=IDR_MENU1
+Resource5=IDD_DIALOG6
+Resource6=IDD_DIALOG4
+Resource7=IDD_DIALOG1
+Resource8=IDR_MENU2
+Resource9=IDD_BYSJ_DIALOG
+Resource10=IDD_DianZhang
 Class4=CDianZhang
 Class5=KuGuan
-Resource11=IDD_DIALOG1
+Resource11=IDD_KuGuan
 Class6=Cdb
 Class7=CKuguanSet
 Class8=res
 Class9=CDiolag
-Resource12=IDR_TOOLBAR1
+Class10=productset
+Class11=repset
+Class12=priceset
+Class13=empty
+Class14=xsjlset
+Resource12=IDD_ABOUTBOX
+Class15=databaseset
+Resource13=IDR_TOOLBAR1
 
 [CLS:CBysjApp]
 Type=0
@@ -236,4 +243,191 @@ Column10=[p0], 12, 510
 Column11=[prod], 12, 510
 Column12=[pn1], 12, 510
 Column13=[ph1], 12, 510
+
+[CLS:productset]
+Type=0
+HeaderFile=productset.h
+ImplementationFile=productset.cpp
+BaseClass=CRecordset
+Filter=N
+VirtualFilter=r
+
+[DB:productset]
+DB=1
+DBType=ODBC
+ColumnCount=17
+Column1=[price].[ic], 4, 4
+Column2=[jp], 4, 4
+Column3=[bp], 4, 4
+Column4=[lr], 4, 4
+Column5=[id], 4, 4
+Column6=[product].[ic], 4, 4
+Column7=[oc], 4, 4
+Column8=[pp], 4, 4
+Column9=[pm], 12, 510
+Column10=[kh], 12, 510
+Column11=[ty], 12, 510
+Column12=[jx], 12, 510
+Column13=[pn0], 12, 510
+Column14=[p0], 12, 510
+Column15=[prod], 12, 510
+Column16=[pn1], 12, 510
+Column17=[ph1], 12, 510
+
+[CLS:repset]
+Type=0
+HeaderFile=repset.h
+ImplementationFile=repset.cpp
+BaseClass=CRecordset
+Filter=N
+VirtualFilter=r
+
+[DB:repset]
+DB=1
+DBType=ODBC
+ColumnCount=4
+Column1=[ic], 4, 4
+Column2=[ct], 4, 4
+Column3=[ct0], 4, 4
+Column4=[mg], 12, 510
+
+[CLS:priceset]
+Type=0
+HeaderFile=priceset.h
+ImplementationFile=priceset.cpp
+BaseClass=CRecordset
+Filter=N
+VirtualFilter=r
+
+[DB:priceset]
+DB=1
+DBType=ODBC
+ColumnCount=4
+Column1=[ic], 4, 4
+Column2=[jp], 4, 4
+Column3=[bp], 4, 4
+Column4=[lr], 4, 4
+
+[CLS:empty]
+Type=0
+HeaderFile=empty.h
+ImplementationFile=empty.cpp
+BaseClass=CRecordset
+Filter=N
+VirtualFilter=r
+
+[DB:empty]
+DB=1
+DBType=ODBC
+ColumnCount=10
+Column1=[eid], 4, 4
+Column2=[ename], 12, 510
+Column3=[esex], 12, 510
+Column4=[eage], 12, 510
+Column5=[emon], 4, 4
+Column6=[eages], 12, 510
+Column7=[ecot1], 12, 510
+Column8=[ecot2], 12, 510
+Column9=[ecp], 12, 510
+Column10=[ecpn], 12, 510
+
+[CLS:xsjlset]
+Type=0
+HeaderFile=xsjlset.h
+ImplementationFile=xsjlset.cpp
+BaseClass=CRecordset
+Filter=N
+VirtualFilter=r
+
+[DB:xsjlset]
+DB=1
+DBType=ODBC
+ColumnCount=17
+Column1=[jylsh], 4, 4
+Column2=[syy], 4, 4
+Column3=[xsyg], 4, 4
+Column4=[jysj], 11, 16
+Column5=[jysl], 4, 4
+Column6=[jyje], 4, 4
+Column7=[lr], 4, 4
+Column8=[p1], 12, 510
+Column9=[p2], 12, 510
+Column10=[p3], 12, 510
+Column11=[p4], 12, 510
+Column12=[p5], 12, 510
+Column13=[p6], 12, 510
+Column14=[p7], 12, 510
+Column15=[p8], 12, 510
+Column16=[p9], 12, 510
+Column17=[p10], 12, 510
+
+[MNU:IDR_MENU2]
+Type=1
+Class=?
+Command1=ID_KUGUAN0
+Command2=ID_KUGUAN1
+Command3=ID_KUGUAN2
+Command4=ID_KUGUAN3
+CommandCount=4
+
+[CLS:databaseset]
+Type=0
+HeaderFile=databaseset.h
+ImplementationFile=databaseset.cpp
+BaseClass=CRecordset
+Filter=N
+VirtualFilter=r
+
+[DB:databaseset]
+DB=1
+DBType=ODBC
+ColumnCount=48
+Column1=[eid], 4, 4
+Column2=[ename], 12, 510
+Column3=[esex], 12, 510
+Column4=[eage], 12, 510
+Column5=[emon], 4, 4
+Column6=[eages], 12, 510
+Column7=[ecot1], 12, 510
+Column8=[ecot2], 12, 510
+Column9=[ecp], 12, 510
+Column10=[ecpn], 12, 510
+Column11=[price].[ic], 4, 4
+Column12=[jp], 4, 4
+Column13=[bp], 4, 4
+Column14=[price].[lr], 4, 4
+Column15=[id], 4, 4
+Column16=[product].[ic], 4, 4
+Column17=[oc], 4, 4
+Column18=[pp], 4, 4
+Column19=[pm], 12, 510
+Column20=[kh], 12, 510
+Column21=[ty], 12, 510
+Column22=[jx], 12, 510
+Column23=[pn0], 12, 510
+Column24=[p0], 12, 510
+Column25=[prod], 12, 510
+Column26=[pn1], 12, 510
+Column27=[ph1], 12, 510
+Column28=[rep].[ic], 4, 4
+Column29=[ct], 4, 4
+Column30=[ct0], 4, 4
+Column31=[mg], 12, 510
+Column32=[jylsh], 4, 4
+Column33=[syy], 4, 4
+Column34=[xsyg], 4, 4
+Column35=[jysj], 11, 16
+Column36=[jysl], 4, 4
+Column37=[jyje], 4, 4
+Column38=[xsjl].[lr], 4, 4
+Column39=[p1], 12, 510
+Column40=[p2], 12, 510
+Column41=[p3], 12, 510
+Column42=[p4], 12, 510
+Column43=[p5], 12, 510
+Column44=[p6], 12, 510
+Column45=[p7], 12, 510
+Column46=[p8], 12, 510
+Column47=[p9], 12, 510
+Column48=[p10], 12, 510
 

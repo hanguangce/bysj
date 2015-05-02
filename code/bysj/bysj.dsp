@@ -102,7 +102,7 @@ SOURCE=.\bysjDlg.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\db.cpp
+SOURCE=.\databaseset.cpp
 # End Source File
 # Begin Source File
 
@@ -110,16 +110,32 @@ SOURCE=.\DianZhang.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\empty.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\KuGuan.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\KuguanSet.cpp
+SOURCE=.\priceset.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\productset.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\repset.cpp
 # End Source File
 # Begin Source File
 
 SOURCE=.\StdAfx.cpp
 # ADD CPP /Yc"stdafx.h"
+# End Source File
+# Begin Source File
+
+SOURCE=.\xsjlset.cpp
 # End Source File
 # End Group
 # Begin Group "Header Files"
@@ -135,7 +151,7 @@ SOURCE=.\bysjDlg.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\db.h
+SOURCE=.\databaseset.h
 # End Source File
 # Begin Source File
 
@@ -143,11 +159,23 @@ SOURCE=.\DianZhang.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\empty.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\KuGuan.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\KuguanSet.h
+SOURCE=.\priceset.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\productset.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\repset.h
 # End Source File
 # Begin Source File
 
@@ -156,6 +184,10 @@ SOURCE=.\Resource.h
 # Begin Source File
 
 SOURCE=.\StdAfx.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\xsjlset.h
 # End Source File
 # End Group
 # Begin Group "Resource Files"

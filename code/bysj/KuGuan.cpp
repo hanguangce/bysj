@@ -84,7 +84,7 @@ BOOL KuGuan::OnInitDialog()
 	m_ctrList.InsertColumn(8,"备注说明");
 
 	m_ctrList.SetColumnWidth(0,60);
-	m_ctrList.SetColumnWidth(1,120);
+	m_ctrList.SetColumnWidth(1,80);
 	m_ctrList.SetColumnWidth(2,80);
 	m_ctrList.SetColumnWidth(3,80);
 	m_ctrList.SetColumnWidth(4,80);
@@ -103,43 +103,43 @@ void KuGuan::OnOK()
 {
 	// TODO: Add extra validation here
 	
-//	CDialog::OnOK();
+	CDialog::OnOK();
 
 
 UpdateData();
 	CString strSQL;
-	if(1)
+	if(0)
 	{
-		strSQL.Format("select * from product");
+		strSQL.Format("select q.* from product as q");
 	}
 
 	else 
 	{
-		strSQL="select * from product";
+		strSQL=m_recordset.Sql;
 	}
-	m_ctrList.DeleteAllItems();
-	m_ctrList.SetRedraw(FALSE);
+//	m_ctrList.DeleteAllItems();
+//	m_ctrList.SetRedraw(FALSE);
 
 	if(!m_recordset.Open(AFX_DB_USE_DEFAULT_TYPE,strSQL))
 	{
 		MessageBox("打开数据库失败!","数据库错误",MB_OK);
 		return ;
 	}
-	
+/*	
 	int i=0;
 	CString strTime;
 	while(!m_recordset.IsEOF())
 	{
 		m_ctrList.InsertItem(i,"12");
-		strTime.Format("%ld",m_recordset.m_ic);
-		m_ctrList.SetItemText(i,1,strTime);
-		m_ctrList.SetItemText(i,2,m_recordset.m_pm);
+//		strTime.Format("%ld",m_recordset.m_ic);
+//		m_ctrList.SetItemText(i,1,strTime);
+//		m_ctrList.SetItemText(i,2,m_recordset.m_pm);
 	//	m_ctrList.SetItemText(i,3,m_recordset.m_jx);
 	//	m_ctrList.SetItemText(i,4,m_recordset.m_oc);
 		i++;
-		m_recordset.MoveNext();
+//		m_recordset.MoveNext();
 	}
 	m_recordset.Close();
 	m_ctrList.SetRedraw(TRUE);	
-
+*/
 }

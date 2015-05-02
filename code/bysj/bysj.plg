@@ -6,22 +6,32 @@
 --------------------Configuration: bysj - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP112.tmp" with contents
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP286.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/bysj.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Administrator\git\bysj\code\bysj\databaseset.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP286.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP287.tmp" with contents
 [
 /nologo /subsystem:windows /incremental:yes /pdb:"Debug/bysj.pdb" /debug /machine:I386 /out:"Debug/bysj.exe" /pdbtype:sept 
 ".\Debug\bysj.obj"
 ".\Debug\bysjDlg.obj"
-".\Debug\db.obj"
+".\Debug\databaseset.obj"
 ".\Debug\DianZhang.obj"
+".\Debug\empty.obj"
 ".\Debug\KuGuan.obj"
-".\Debug\KuguanSet.obj"
+".\Debug\priceset.obj"
+".\Debug\productset.obj"
+".\Debug\repset.obj"
 ".\Debug\StdAfx.obj"
+".\Debug\xsjlset.obj"
 ".\Debug\bysj.res"
-".\Debug\diolagset.obj"
-".\Debug\Diolag.obj"
 ]
-Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP112.tmp"
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP287.tmp"
 <h3>Output Window</h3>
+Compiling...
+databaseset.cpp
 Linking...
 
 

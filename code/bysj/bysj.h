@@ -14,7 +14,6 @@
 
 #include "resource.h"		// main symbols
 
-#include "Diolag.h"
 /////////////////////////////////////////////////////////////////////////////
 // CBysjApp:
 // See bysj.cpp for the implementation of this class
@@ -40,7 +39,7 @@ public:
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 
-	CDiolag m_recordset;
+//	CDiolag m_recordset;
 };
 
 
