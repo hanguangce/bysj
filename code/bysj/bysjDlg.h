@@ -18,9 +18,9 @@ public:
 	CBysjDlg(CWnd* pParent = NULL);	// standard constructor
 
 	int nIndex ;	
-	_ConnectionPtr m_pConnection;
-	_CommandPtr m_pCommand;
-	_RecordsetPtr m_pRecordset;
+//	_ConnectionPtr m_pConnection;
+//	_CommandPtr m_pCommand;
+//	_RecordsetPtr m_pRecordset;
 // Dialog Data
 	//{{AFX_DATA(CBysjDlg)
 	enum { IDD = IDD_BYSJ_DIALOG };

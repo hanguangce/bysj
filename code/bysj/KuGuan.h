@@ -8,8 +8,10 @@
 //
 /////////////////////////////////////////////////////////////////////////////
 // KuGuan dialog
-#include "databaseset.h"
-//#include "productset.h"
+#include "pro_rep_set.h"
+#include "productset.h"
+#include "repset.h"
+#include "Dkgcx.h"
 class KuGuan : public CDialog
 {
 // Construction
@@ -30,6 +32,7 @@ public:
 	virtual int DoModal();
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam);
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -41,11 +44,19 @@ protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	virtual BOOL OnInitDialog();
 	virtual void OnOK();
+	afx_msg void OnUpdatehwidfo(CCmdUI* pCmdUI);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
+	pro_rep_set  m_record;
+	productset m_recordset;
+	repset		m_recordset0;	
+	Dkgcx		dkucx;
+	CString		sqlstr;
 
-	databaseset m_recordset;
-
+	void OnCX0();
+	void OnCX1();
+	void OnCX2();
+	void OnCX3();
 
 };
 

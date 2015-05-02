@@ -70,7 +70,7 @@ databaseset::databaseset(CDatabase* pdb)
 	m_nFields = 48;
 	//}}AFX_FIELD_INIT
 	m_nDefaultType = snapshot;
-	Sql.Format("select * from emtpys,price,product,rep,xsjl");
+	Sql.Format("select product.ic from emtpys,price,product,rep,xsjl");
 }
 
 

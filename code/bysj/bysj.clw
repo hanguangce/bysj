@@ -2,30 +2,30 @@
 
 [General Info]
 Version=1
-LastClass=databaseset
+LastClass=pro_rep_set
 LastTemplate=CRecordset
 NewFileInclude1=#include "stdafx.h"
 NewFileInclude2=#include "bysj.h"
 
-ClassCount=15
+ClassCount=17
 Class1=CBysjApp
 Class2=CBysjDlg
 Class3=CAboutDlg
 
 ResourceCount=13
-Resource1=IDD_ShouYinYuan
+Resource1=IDR_MENU1
 Resource2=IDR_MAINFRAME
-Resource3=IDD_DIALOG5
-Resource4=IDR_MENU1
-Resource5=IDD_DIALOG6
-Resource6=IDD_DIALOG4
-Resource7=IDD_DIALOG1
-Resource8=IDR_MENU2
+Resource3=IDD_ABOUTBOX
+Resource4=IDD_ShouYinYuan
+Resource5=IDD_DIALOG5
+Resource6=IDD_DianZhang
+Resource7=IDD_JYJL
+Resource8=IDD_KuGuan
 Resource9=IDD_BYSJ_DIALOG
-Resource10=IDD_DianZhang
+Resource10=IDD_DIALOG6
 Class4=CDianZhang
 Class5=KuGuan
-Resource11=IDD_KuGuan
+Resource11=IDD_KGCX
 Class6=Cdb
 Class7=CKuguanSet
 Class8=res
@@ -35,8 +35,10 @@ Class11=repset
 Class12=priceset
 Class13=empty
 Class14=xsjlset
-Resource12=IDD_ABOUTBOX
+Resource12=IDR_MENU2
 Class15=databaseset
+Class16=Dkgcx
+Class17=pro_rep_set
 Resource13=IDR_TOOLBAR1
 
 [CLS:CBysjApp]
@@ -81,13 +83,6 @@ Control4=IDC_EDIT1,edit,1350631552
 Control5=IDC_EDIT2,edit,1350631552
 Control6=IDC_STATIC,static,1342308352
 Control7=IDC_COMBO1,combobox,1344340226
-
-[DLG:IDD_DIALOG4]
-Type=1
-Class=?
-ControlCount=2
-Control1=IDOK,button,1342242817
-Control2=IDCANCEL,button,1342242816
 
 [DLG:IDD_DIALOG5]
 Type=1
@@ -139,7 +134,7 @@ HeaderFile=KuGuan.h
 ImplementationFile=KuGuan.cpp
 BaseClass=CDialog
 Filter=D
-LastObject=KuGuan
+LastObject=IDC_LIST1
 VirtualFilter=dWC
 
 [DLG:IDD_KuGuan]
@@ -167,14 +162,6 @@ Control10=IDC_STATIC,static,1342308352
 Control11=IDC_STATIC,button,1342177287
 Control12=IDC_STATIC,button,1342177287
 Control13=IDC_STATIC,button,1342177287
-
-[DLG:IDD_DIALOG1]
-Type=1
-Class=?
-ControlCount=3
-Control1=IDOK,button,1342242817
-Control2=IDCANCEL,button,1342242816
-Control3=IDC_COMBO1,combobox,1344340226
 
 [CLS:Cdb]
 Type=0
@@ -377,6 +364,7 @@ ImplementationFile=databaseset.cpp
 BaseClass=CRecordset
 Filter=N
 VirtualFilter=r
+LastObject=databaseset
 
 [DB:databaseset]
 DB=1
@@ -430,4 +418,71 @@ Column45=[p7], 12, 510
 Column46=[p8], 12, 510
 Column47=[p9], 12, 510
 Column48=[p10], 12, 510
+
+[DLG:IDD_JYJL]
+Type=1
+Class=?
+ControlCount=3
+Control1=IDOK,button,1342242817
+Control2=IDCANCEL,button,1342242816
+Control3=IDC_COMBO1,combobox,1344340226
+
+[DLG:IDD_KGCX]
+Type=1
+Class=Dkgcx
+ControlCount=14
+Control1=IDOK,button,1342242817
+Control2=IDCANCEL,button,1342242816
+Control3=IDC_KGCX_E0,edit,1350631552
+Control4=IDC_BUTTON1,button,1342242816
+Control5=IDC_BUTTON2,button,1342242816
+Control6=IDC_BUTTON3,button,1342242816
+Control7=IDC_BUTTON4,button,1342242816
+Control8=IDC_STATIC,static,1342308352
+Control9=IDC_STATIC,static,1342308352
+Control10=IDC_STATIC,static,1342308352
+Control11=IDC_STATIC,static,1342308352
+Control12=IDC_KGCX_E1,edit,1350631552
+Control13=IDC_KGCX_E3,edit,1350631552
+Control14=IDC_KGCX_E2,edit,1350631552
+
+[CLS:Dkgcx]
+Type=0
+HeaderFile=Dkgcx.h
+ImplementationFile=Dkgcx.cpp
+BaseClass=CDialog
+Filter=D
+VirtualFilter=dWC
+LastObject=ID_kcinfo
+
+[CLS:pro_rep_set]
+Type=0
+HeaderFile=pro_rep_set.h
+ImplementationFile=pro_rep_set.cpp
+BaseClass=CRecordset
+Filter=N
+VirtualFilter=r
+LastObject=pro_rep_set
+
+[DB:pro_rep_set]
+DB=1
+DBType=ODBC
+ColumnCount=17
+Column1=[id], 4, 4
+Column2=[product].[ic], 4, 4
+Column3=[oc], 4, 4
+Column4=[pp], 4, 4
+Column5=[pm], 12, 510
+Column6=[kh], 12, 510
+Column7=[ty], 12, 510
+Column8=[jx], 12, 510
+Column9=[pn0], 12, 510
+Column10=[p0], 12, 510
+Column11=[prod], 12, 510
+Column12=[pn1], 12, 510
+Column13=[ph1], 12, 510
+Column14=[rep].[ic], 4, 4
+Column15=[ct], 4, 4
+Column16=[ct0], 4, 4
+Column17=[mg], 12, 510
 
