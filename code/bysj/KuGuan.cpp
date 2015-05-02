@@ -495,11 +495,12 @@ dgkrh.DoModal();
 
 void KuGuan::OnCX3()
 {
-	dkucx.DoModal();
-//	sqlstr.Format(" UPDATE rep SET ct=24    WHERE ic = 12  ");
-	UpdateData();
-	m_ctrList.DeleteAllItems();
-	m_ctrList.SetRedraw(FALSE);	
+
+	dgktj.DoModal();
+  if(dgktj.isok==1){
+	CString strSQL;
+	strSQL.Format("select * from rep where ic ="+dgktj.selStr);
+
 
 	if(!m_recordset0.Open())
 	{
@@ -513,15 +514,22 @@ void KuGuan::OnCX3()
 	if( !m_recordset0.CanAppend( ) )
 	    return ;                      // no field values were set
 	m_recordset0.AddNew( );
-	m_recordset0.m_ic = 14 ;
-
+	m_recordset0.m_ic = atol(dgktj.selStr) ;
+	m_recordset0.m_ct =	dgktj.m_gktj_num;
+	m_recordset0.m_ct0 =0;
+	m_recordset0.m_mg = "kuguan";
 	if( !m_recordset0.Update())
 	{
 	   AfxMessageBox( "Record not added; no field values were set." );
 	    return ;
 	}
-	m_recordset0.Close();
-	
+	m_recordset0.Close();	
+  }
+
+	UpdateData();
+	m_ctrList.DeleteAllItems();
+	m_ctrList.SetRedraw(FALSE);	
+
 	sqlstr.Format("select * from product right join rep  on product.ic =  rep.ic ");
 	if(!m_record.Open(AFX_DB_USE_DEFAULT_TYPE,sqlstr))
 		{
@@ -552,4 +560,5 @@ void KuGuan::OnCX3()
 		}
 		m_record.Close();	
 	m_ctrList.SetRedraw(TRUE);
+  
 }

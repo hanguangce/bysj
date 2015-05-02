@@ -208,8 +208,19 @@ void CBysjDlg::OnOK()
 	// TODO: Add extra validation here
 	
 	CDialog::OnOK();
-
+	switch(nIndex)
+	case  1:
 		KuGuan kuguan;
 		kuguan.DoModal();
+	case  2:
+		KuGuan kuguan;
+		kuguan.DoModal();
+	case  3:
+		KuGuan kuguan;
+		kuguan.DoModal();
+
+			break; 
+		default: break; 
+	}
 
 }
