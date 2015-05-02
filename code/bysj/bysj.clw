@@ -2,30 +2,30 @@
 
 [General Info]
 Version=1
-LastClass=pro_rep_set
-LastTemplate=CRecordset
+LastClass=Dgkrh
+LastTemplate=CDialog
 NewFileInclude1=#include "stdafx.h"
 NewFileInclude2=#include "bysj.h"
 
-ClassCount=17
+ClassCount=18
 Class1=CBysjApp
 Class2=CBysjDlg
 Class3=CAboutDlg
 
-ResourceCount=13
-Resource1=IDR_MENU1
+ResourceCount=14
+Resource1=IDD_BYSJ_DIALOG
 Resource2=IDR_MAINFRAME
 Resource3=IDD_ABOUTBOX
-Resource4=IDD_ShouYinYuan
-Resource5=IDD_DIALOG5
-Resource6=IDD_DianZhang
-Resource7=IDD_JYJL
-Resource8=IDD_KuGuan
-Resource9=IDD_BYSJ_DIALOG
-Resource10=IDD_DIALOG6
+Resource4=IDD_JYJL
+Resource5=IDR_MENU1
+Resource6=IDR_MENU2
+Resource7=IDD_DIALOG5
+Resource8=IDD_DIALOG6
+Resource9=IDD_KuGuan
+Resource10=IDD_ShouYinYuan
 Class4=CDianZhang
 Class5=KuGuan
-Resource11=IDD_KGCX
+Resource11=IDD_GKRH
 Class6=Cdb
 Class7=CKuguanSet
 Class8=res
@@ -35,11 +35,13 @@ Class11=repset
 Class12=priceset
 Class13=empty
 Class14=xsjlset
-Resource12=IDR_MENU2
+Resource12=IDD_KGCX
 Class15=databaseset
 Class16=Dkgcx
 Class17=pro_rep_set
-Resource13=IDR_TOOLBAR1
+Resource13=IDD_DianZhang
+Class18=Dgkrh
+Resource14=IDR_TOOLBAR1
 
 [CLS:CBysjApp]
 Type=0
@@ -485,4 +487,24 @@ Column14=[rep].[ic], 4, 4
 Column15=[ct], 4, 4
 Column16=[ct0], 4, 4
 Column17=[mg], 12, 510
+
+[DLG:IDD_GKRH]
+Type=1
+Class=Dgkrh
+ControlCount=6
+Control1=IDOK,button,1342242817
+Control2=IDCANCEL,button,1342242816
+Control3=IDC_COMBO_KGRH,combobox,1344340226
+Control4=IDC_EDIT1,edit,1350631552
+Control5=IDC_STATIC_CRH_NUM,static,1342308352
+Control6=IDC_STATIC_CRH_ID,static,1342308352
+
+[CLS:Dgkrh]
+Type=0
+HeaderFile=Dgkrh.h
+ImplementationFile=Dgkrh.cpp
+BaseClass=CDialog
+Filter=D
+VirtualFilter=dWC
+LastObject=Dgkrh
 

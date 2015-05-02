@@ -106,6 +106,10 @@ SOURCE=.\databaseset.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\Dgkrh.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\DianZhang.cpp
 # End Source File
 # Begin Source File
@@ -160,6 +164,10 @@ SOURCE=.\bysjDlg.h
 # Begin Source File
 
 SOURCE=.\databaseset.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Dgkrh.h
 # End Source File
 # Begin Source File
 

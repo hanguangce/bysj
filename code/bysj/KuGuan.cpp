@@ -102,6 +102,9 @@ BOOL KuGuan::OnInitDialog()
 	              // EXCEPTION: OCX Property Pages should return FALSE
 }
 
+
+
+
 void KuGuan::OnOK() 
 {
 	// TODO: Add extra validation here
@@ -109,10 +112,46 @@ void KuGuan::OnOK()
 //	CDialog::OnOK();
 
 
+
+
+	UpdateData();	
+	m_ctrList.DeleteAllItems();
+	m_ctrList.SetRedraw(FALSE);	
+	
+	sqlstr.Format("select * from product right join rep  on product.ic =  rep.ic ");
+	if(!m_record.Open(AFX_DB_USE_DEFAULT_TYPE,sqlstr))
+	{
+		MessageBox("打开数据库失败!","数据库错误",MB_OK);
+		return ;
+	}
+	int i=0;
+	CString str;
+	while(!m_record.IsEOF())
+	{
+			str.Format("%ld",i);
+			m_ctrList.InsertItem(i,str);
+			str.Format("%ld",m_record.m_ic);
+			m_ctrList.SetItemText(i,1,str);
+			str.Format("%ld",m_record.m_oc);
+			m_ctrList.SetItemText(i,2,str);
+			str.Format("%ld",m_record.m_pp);
+			m_ctrList.SetItemText(i,3,str);
+			m_ctrList.SetItemText(i,4,m_record.m_pm);
+			m_ctrList.SetItemText(i,5,m_record.m_ty);
+			str.Format("%ld",m_record.m_ct);
+			m_ctrList.SetItemText(i,6,str);
+			str.Format("%ld",m_record.m_ct0);
+			m_ctrList.SetItemText(i,7,str);
+			m_ctrList.SetItemText(i,8,m_record.m_mg);
+			i++;
+			m_record.MoveNext();
+	}
+	m_record.Close();
+	m_ctrList.SetRedraw(TRUE);
+	UpdateData(true);	
+
+/*
 UpdateData();
-
-
-
 
 	CString strSQL;
 	if(1)
@@ -140,7 +179,7 @@ UpdateData();
     return;
 }
 
-/*
+
 if( !m_recordset0.CanAppend( ) )
     return ;                      // no field values were set
 m_recordset0.AddNew( );
@@ -153,7 +192,7 @@ if( !m_recordset0.Update( ) )
 }
 
 */
-	int i=0;
+/*	int i=0;
 	CString str;
 	while(!m_recordset0.IsEOF())
 	{
@@ -174,7 +213,7 @@ if( !m_recordset0.Update( ) )
 	m_recordset0.Close();
 
 	m_ctrList.SetRedraw(TRUE);	
-
+*/
 }
 
 void KuGuan::OnUpdatehwidfo(CCmdUI* pCmdUI) 
@@ -303,18 +342,44 @@ void KuGuan::OnCX0()
 
 void KuGuan::OnCX1()
 {
-	dkucx.DoModal();
-	sqlstr.Format("UPDATE rep SET ct=24    WHERE ic = 12   ");
-	UpdateData();
-	m_ctrList.DeleteAllItems();
-	m_ctrList.SetRedraw(FALSE);	
+	dgkrh.CRH=0;
+	dgkrh.DoModal();
 
-	if(!m_recordset.Open(AFX_DB_USE_DEFAULT_TYPE,sqlstr))
+	CString strSQL;
+	strSQL.Format("select * from rep where ic ="+dgkrh.selStr);
+//	MessageBox(" "+strSQL);//+
+//	MessageBox(" "+dgkrh.m_kc_rh);
+
+	if(!m_recordset0.Open(AFX_DB_USE_DEFAULT_TYPE,strSQL))
 	{
 		MessageBox("打开数据库失败!","数据库错误",MB_OK);
 		return ;
 	}
-	m_recordset.Close();
+	if( !m_recordset0.CanUpdate() )
+	{
+		AfxMessageBox( "Unable to update the Student recordset." );
+		return;
+	}
+
+	int i0=0;
+//	CString str;
+	while(!m_recordset0.IsEOF())
+	{
+		m_recordset0.Edit();
+		m_recordset0.m_ct+=dgkrh.m_kc_rh;
+		if(!m_recordset0.Update())
+		{
+			 AfxMessageBox( "Record not updated; no field values were set." );
+			 return ;
+		}
+		i0++;
+		m_recordset0.MoveNext();
+	}	
+	m_recordset0.Close();
+
+	UpdateData();	
+	m_ctrList.DeleteAllItems();
+	m_ctrList.SetRedraw(FALSE);	
 	
 	sqlstr.Format("select * from product right join rep  on product.ic =  rep.ic ");
 	if(!m_record.Open(AFX_DB_USE_DEFAULT_TYPE,sqlstr))
@@ -322,7 +387,6 @@ void KuGuan::OnCX1()
 		MessageBox("打开数据库失败!","数据库错误",MB_OK);
 		return ;
 	}
-	
 	int i=0;
 	CString str;
 	while(!m_record.IsEOF())
@@ -345,36 +409,66 @@ void KuGuan::OnCX1()
 			i++;
 			m_record.MoveNext();
 	}
-	m_record.Close();		
+	m_record.Close();
 	m_ctrList.SetRedraw(TRUE);
+	UpdateData(true);	
 }
 
 
 void KuGuan::OnCX2()
 {
-	dkucx.DoModal();
-	sqlstr.Format(" UPDATE rep SET ct=24    WHERE ic = 12  " );
-	UpdateData();
+dgkrh.CRH=1;
+dgkrh.DoModal();
+
+	CString strSQL;
+	strSQL.Format("select * from rep where ic ="+dgkrh.selStr);
+//	MessageBox(" "+strSQL);//+
+//	MessageBox(" "+dgkrh.m_kc_rh);
+
+
+
+
+	if(!m_recordset0.Open(AFX_DB_USE_DEFAULT_TYPE,strSQL))
+	{
+		MessageBox("打开数据库失败!","数据库错误",MB_OK);
+		return ;
+	}
+	if( !m_recordset0.CanUpdate() )
+	{
+		AfxMessageBox( "Unable to update the Student recordset." );
+		return;
+	}
+
+	int i0=0;
+//	CString str;
+	while(!m_recordset0.IsEOF())
+	{
+		m_recordset0.Edit();
+		m_recordset0.m_ct-=dgkrh.m_kc_rh;
+		if(!m_recordset0.Update())
+		{
+			 AfxMessageBox( "Record not updated; no field values were set." );
+			 return ;
+		}
+		i0++;
+		m_recordset0.MoveNext();
+	}	
+	m_recordset0.Close();
+
+	UpdateData();	
 	m_ctrList.DeleteAllItems();
 	m_ctrList.SetRedraw(FALSE);	
-
-		if(!m_recordset.Open(AFX_DB_USE_DEFAULT_TYPE,sqlstr))
-		{
-			MessageBox("打开数据库失败!","数据库错误",MB_OK);
-			return ;
-		}
-		m_recordset.Close();	
-		sqlstr.Format("select * from product right join rep  on product.ic =  rep.ic ");
-		if(!m_record.Open(AFX_DB_USE_DEFAULT_TYPE,sqlstr))
-		{
-			MessageBox("打开数据库失败!","数据库错误",MB_OK);
-			return ;
-		}
 	
-		int i=0;
-		CString str;
-		while(!m_record.IsEOF())
-		{
+	sqlstr.Format("select * from product right join rep  on product.ic =  rep.ic ");
+	if(!m_record.Open(AFX_DB_USE_DEFAULT_TYPE,sqlstr))
+	{
+		MessageBox("打开数据库失败!","数据库错误",MB_OK);
+		return ;
+	}
+	int i=0;
+	CString str;
+	while(!m_record.IsEOF())
+	{
 			str.Format("%ld",i);
 			m_ctrList.InsertItem(i,str);
 			str.Format("%ld",m_record.m_ic);
@@ -392,34 +486,48 @@ void KuGuan::OnCX2()
 			m_ctrList.SetItemText(i,8,m_record.m_mg);
 			i++;
 			m_record.MoveNext();
-		}
-	m_record.Close();	
+	}
+	m_record.Close();
 	m_ctrList.SetRedraw(TRUE);
+	UpdateData(true);	
 }
 
 
 void KuGuan::OnCX3()
 {
 	dkucx.DoModal();
-	sqlstr.Format(" UPDATE rep SET ct=24    WHERE ic = 12  ");
+//	sqlstr.Format(" UPDATE rep SET ct=24    WHERE ic = 12  ");
 	UpdateData();
 	m_ctrList.DeleteAllItems();
 	m_ctrList.SetRedraw(FALSE);	
 
-		if(!m_recordset.Open(AFX_DB_USE_DEFAULT_TYPE,sqlstr))
+	if(!m_recordset0.Open())
+	{
+		MessageBox("打开数据库失败!","数据库错误",MB_OK);
+		return ;
+	}
+//	CString strSQL;
+//
+//	strSQL.Format("select * from rep where ic =13");
+//
+	if( !m_recordset0.CanAppend( ) )
+	    return ;                      // no field values were set
+	m_recordset0.AddNew( );
+	m_recordset0.m_ic = 14 ;
+
+	if( !m_recordset0.Update())
+	{
+	   AfxMessageBox( "Record not added; no field values were set." );
+	    return ;
+	}
+	m_recordset0.Close();
+	
+	sqlstr.Format("select * from product right join rep  on product.ic =  rep.ic ");
+	if(!m_record.Open(AFX_DB_USE_DEFAULT_TYPE,sqlstr))
 		{
 			MessageBox("打开数据库失败!","数据库错误",MB_OK);
 			return ;
 		}
-		m_recordset.Close();
-	
-		sqlstr.Format("select * from product right join rep  on product.ic =  rep.ic ");
-		if(!m_record.Open(AFX_DB_USE_DEFAULT_TYPE,sqlstr))
-		{
-			MessageBox("打开数据库失败!","数据库错误",MB_OK);
-			return ;
-		}
-	
 		int i=0;
 		CString str;
 		while(!m_record.IsEOF())

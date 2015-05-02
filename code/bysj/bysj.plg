@@ -6,12 +6,19 @@
 --------------------Configuration: bysj - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP74E.tmp" with contents
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPA1E.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/bysj.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Administrator\git\bysj\code\bysj\KuGuan.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPA1E.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPA1F.tmp" with contents
 [
 /nologo /subsystem:windows /incremental:yes /pdb:"Debug/bysj.pdb" /debug /machine:I386 /out:"Debug/bysj.exe" /pdbtype:sept 
 ".\Debug\bysj.obj"
 ".\Debug\bysjDlg.obj"
 ".\Debug\databaseset.obj"
+".\Debug\Dgkrh.obj"
 ".\Debug\DianZhang.obj"
 ".\Debug\Dkgcx.obj"
 ".\Debug\empty.obj"
@@ -24,16 +31,19 @@ Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP74E.tmp" with con
 ".\Debug\xsjlset.obj"
 ".\Debug\bysj.res"
 ]
-Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP74E.tmp"
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPA1F.tmp"
 <h3>Output Window</h3>
+Compiling...
+KuGuan.cpp
 Linking...
-Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP750.tmp" with contents
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPA20.tmp" with contents
 [
 /nologo /o"Debug/bysj.bsc" 
 ".\Debug\StdAfx.sbr"
 ".\Debug\bysj.sbr"
 ".\Debug\bysjDlg.sbr"
 ".\Debug\databaseset.sbr"
+".\Debug\Dgkrh.sbr"
 ".\Debug\DianZhang.sbr"
 ".\Debug\Dkgcx.sbr"
 ".\Debug\empty.sbr"
@@ -43,7 +53,7 @@ Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP750.tmp" with con
 ".\Debug\productset.sbr"
 ".\Debug\repset.sbr"
 ".\Debug\xsjlset.sbr"]
-Creating command line "bscmake.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP750.tmp"
+Creating command line "bscmake.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPA20.tmp"
 Creating browse info file...
 <h3>Output Window</h3>
 

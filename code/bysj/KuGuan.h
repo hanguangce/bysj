@@ -12,6 +12,7 @@
 #include "productset.h"
 #include "repset.h"
 #include "Dkgcx.h"
+#include "Dgkrh.h"
 class KuGuan : public CDialog
 {
 // Construction
@@ -52,7 +53,7 @@ protected:
 	repset		m_recordset0;	
 	Dkgcx		dkucx;
 	CString		sqlstr;
-
+	Dgkrh		dgkrh;
 	void OnCX0();
 	void OnCX1();
 	void OnCX2();

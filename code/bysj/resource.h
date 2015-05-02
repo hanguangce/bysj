@@ -20,10 +20,10 @@
 #define IDD_DIALOG1                     141
 #define IDD_JYJL                        141
 #define IDR_MENU2                       142
+#define IDD_GKRH                        143
 #define IDC_EDIT1                       1002
 #define IDC_EDIT2                       1003
 #define IDC_COMBO1                      1004
-#define IDC_EDIT3                       1004
 #define IDC_KGCX_E3                     1004
 #define ID_RESET                        1005
 #define IDC_KGCX_E2                     1005
@@ -36,6 +36,9 @@
 #define IDC_BUTTON4                     1013
 #define IDC_KGCX_E0                     1014
 #define IDC_KGCX_E1                     1015
+#define IDC_COMBO_KGRH                  1016
+#define IDC_STATIC_CRH_ID               1017
+#define IDC_STATIC_CRH_NUM              1018
 #define ID_yginfo                       32772
 #define ID_hwidfo                       32773
 #define ID_kcinfo                       32774
@@ -48,9 +51,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        143
+#define _APS_NEXT_RESOURCE_VALUE        144
 #define _APS_NEXT_COMMAND_VALUE         32779
-#define _APS_NEXT_CONTROL_VALUE         1016
+#define _APS_NEXT_CONTROL_VALUE         1019
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
