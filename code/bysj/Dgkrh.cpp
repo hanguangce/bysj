@@ -20,6 +20,8 @@ Dgkrh::Dgkrh(CWnd* pParent /*=NULL*/)
 {
 	//{{AFX_DATA_INIT(Dgkrh)
 	m_kc_rh = 0;
+	m_id = _T("");
+	m_num = _T("");
 	//}}AFX_DATA_INIT
 	CRH=0;//0 in  1 out
 }
@@ -31,6 +33,8 @@ void Dgkrh::DoDataExchange(CDataExchange* pDX)
 	//{{AFX_DATA_MAP(Dgkrh)
 	DDX_Text(pDX, IDC_EDIT1, m_kc_rh);
 	DDV_MinMaxLong(pDX, m_kc_rh, 0, 99999);
+	DDX_Text(pDX, IDC_STATIC_CRH_ID, m_id);
+	DDX_Text(pDX, IDC_STATIC_CRH_NUM, m_num);
 	//}}AFX_DATA_MAP
 }
 
@@ -102,15 +106,18 @@ combo->SetCurSel(0);
 int Dgkrh::DoModal() 
 {
 	// TODO: Add your specialized code here and/or call the base class
+
+//_id.Format("fffff");
+	
 	
 	if(CRH)
 	{
-		GetDlgItem(IDC_STATIC_CRH_ID)->SetWindowText("入货信息的编码");
-		GetDlgItem(IDC_STATIC_CRH_NUM)->SetWindowText("入货数量");
+		m_id.Format("入货信息的编码");
+		m_num.Format("入货数量");
 	}
 	else{
-		GetDlgItem(IDC_STATIC_CRH_ID)->SetWindowText("出货信息的编码");
-		GetDlgItem(IDC_STATIC_CRH_NUM)->SetWindowText("出货数量");
+		m_id.Format("出货信息的编码");
+		m_num.Format("出货数量");
 	}
 	return CDialog::DoModal();
 }

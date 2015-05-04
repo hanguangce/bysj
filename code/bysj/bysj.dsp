@@ -146,12 +146,20 @@ SOURCE=.\repset.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\ssy.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\StdAfx.cpp
 # ADD CPP /Yc"stdafx.h"
 # End Source File
 # Begin Source File
 
 SOURCE=.\xsjlset.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Yfbh.cpp
 # End Source File
 # End Group
 # Begin Group "Header Files"
@@ -215,11 +223,19 @@ SOURCE=.\Resource.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\ssy.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\StdAfx.h
 # End Source File
 # Begin Source File
 
 SOURCE=.\xsjlset.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Yfbh.h
 # End Source File
 # End Group
 # Begin Group "Resource Files"

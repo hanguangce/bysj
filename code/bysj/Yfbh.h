@@ -1,35 +1,31 @@
-#if !defined(AFX_DGKRH_H__E24E97EC_A37D_4159_91DB_FF85684ABA45__INCLUDED_)
-#define AFX_DGKRH_H__E24E97EC_A37D_4159_91DB_FF85684ABA45__INCLUDED_
+#if !defined(AFX_YFBH_H__2A1309CF_5427_4385_8499_67B5C6E6D8A7__INCLUDED_)
+#define AFX_YFBH_H__2A1309CF_5427_4385_8499_67B5C6E6D8A7__INCLUDED_
 
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
-// Dgkrh.h : header file
+// Yfbh.h : header file
 //
-#include"repset.h"
+#include "productset.h"
 /////////////////////////////////////////////////////////////////////////////
-// Dgkrh dialog
+// Yfbh dialog
 
-class Dgkrh : public CDialog
+class Yfbh : public CDialog
 {
 // Construction
 public:
-	Dgkrh(CWnd* pParent = NULL);   // standard constructor
+	Yfbh(CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data
-	//{{AFX_DATA(Dgkrh)
-	enum { IDD = IDD_GKRH };
-	long	m_kc_rh;
-	CString	m_id;
-	CString	m_num;
+	//{{AFX_DATA(Yfbh)
+	enum { IDD = IDD_SYY_YFBH };
+	CString	m_ctrlist;
 	//}}AFX_DATA
 
 
 // Overrides
 	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(Dgkrh)
-	public:
-	virtual int DoModal();
+	//{{AFX_VIRTUAL(Yfbh)
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 	//}}AFX_VIRTUAL
@@ -38,19 +34,19 @@ public:
 protected:
 
 	// Generated message map functions
-	//{{AFX_MSG(Dgkrh)
-	virtual void OnOK();
+	//{{AFX_MSG(Yfbh)
 	virtual BOOL OnInitDialog();
+	virtual void OnOK();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 public:
-	repset m_record;
-	int index;
-	CString selStr;
-	int CRH;
+	productset pset;
+	int nIndex;
+	long id;
+	CString s0;
 };
 
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
-#endif // !defined(AFX_DGKRH_H__E24E97EC_A37D_4159_91DB_FF85684ABA45__INCLUDED_)
+#endif // !defined(AFX_YFBH_H__2A1309CF_5427_4385_8499_67B5C6E6D8A7__INCLUDED_)
