@@ -24,7 +24,8 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CBysjDlg)
 	enum { IDD = IDD_BYSJ_DIALOG };
-		// NOTE: the ClassWizard will add data members here
+	CString	m_name;
+	CString	m_pwd;
 	//}}AFX_DATA
 
 	// ClassWizard generated virtual function overrides

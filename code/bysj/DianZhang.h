@@ -7,6 +7,12 @@
 // DianZhang.h : header file
 //
 
+#include"productset.h"
+#include"repset.h"
+#include"empty.h"
+#include"priceset.h"
+#include"xsjlset.h"
+
 /////////////////////////////////////////////////////////////////////////////
 // CDianZhang dialog
 
@@ -19,7 +25,7 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CDianZhang)
 	enum { IDD = IDD_DianZhang };
-		// NOTE: the ClassWizard will add data members here
+	CListCtrl	m_ctrList;
 	//}}AFX_DATA
 
 
@@ -28,6 +34,7 @@ public:
 	//{{AFX_VIRTUAL(CDianZhang)
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam);
 	//}}AFX_VIRTUAL
 
 // Implementation
@@ -35,9 +42,17 @@ protected:
 
 	// Generated message map functions
 	//{{AFX_MSG(CDianZhang)
-		// NOTE: the ClassWizard will add member functions here
+	virtual BOOL OnInitDialog();
+	afx_msg void OnOk2();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
+public:
+	productset set0;
+	repset		set1;
+	empty		set2;
+	priceset	set3;
+	xsjlset		set4;
+	int 	mode;
 };
 
 //{{AFX_INSERT_LOCATION}}

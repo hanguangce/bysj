@@ -342,9 +342,11 @@ void KuGuan::OnCX0()
 
 void KuGuan::OnCX1()
 {
+//	GetDlgItem(IDC_STATIC_CRH_ID)->SetWindowText("入货信息的编码");
+
 	dgkrh.CRH=0;
 	dgkrh.DoModal();
-
+/*
 	CString strSQL;
 	strSQL.Format("select * from rep where ic ="+dgkrh.selStr);
 //	MessageBox(" "+strSQL);//+
@@ -412,6 +414,7 @@ void KuGuan::OnCX1()
 	m_record.Close();
 	m_ctrList.SetRedraw(TRUE);
 	UpdateData(true);	
+*/
 }
 
 

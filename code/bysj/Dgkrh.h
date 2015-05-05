@@ -20,6 +20,8 @@ public:
 	//{{AFX_DATA(Dgkrh)
 	enum { IDD = IDD_GKRH };
 	long	m_kc_rh;
+	CString	m_id;
+	CString	m_num;
 	//}}AFX_DATA
 
 

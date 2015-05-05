@@ -6,6 +6,7 @@
 #include "bysjDlg.h"
 #include "DianZhang.h"
 #include "KuGuan.h"
+#include "ssy.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -65,7 +66,8 @@ CBysjDlg::CBysjDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CBysjDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CBysjDlg)
-		// NOTE: the ClassWizard will add member initialization here
+	m_name = _T("");
+	m_pwd = _T("");
 	//}}AFX_DATA_INIT
 	// Note that LoadIcon does not require a subsequent DestroyIcon in Win32
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
@@ -75,7 +77,8 @@ void CBysjDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CBysjDlg)
-		// NOTE: the ClassWizard will add DDX and DDV calls here
+	DDX_Text(pDX, IDC_EDIT_NAME, m_name);
+	DDX_Text(pDX, IDC_EDIT_PWD, m_pwd);
 	//}}AFX_DATA_MAP
 }
 
@@ -84,7 +87,7 @@ BEGIN_MESSAGE_MAP(CBysjDlg, CDialog)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_CBN_SELCHANGE(IDC_COMBO1, OnSelchangeCombo1)
+	ON_CBN_SELCHANGE(IDC_COMBO_APP, OnSelchangeCombo1)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -123,12 +126,13 @@ BOOL CBysjDlg::OnInitDialog()
 
 	
 //////下拉列表
-CComboBox* combo= ( CComboBox*)GetDlgItem(IDC_COMBO1);
+CComboBox* combo= ( CComboBox*)GetDlgItem(IDC_COMBO_APP);
 combo->AddString("收银员");
 combo->AddString("库管员");
 combo->AddString("店长");
 
-combo->SetCurSel(0);
+combo->SetCurSel(1);
+nIndex=1;
 ///////
 
 
@@ -198,29 +202,40 @@ void CBysjDlg::OnSelchangeCombo1()
 {
 	// TODO: Add your control notification handler code here
 	
-	CComboBox* combo= ( CComboBox*)GetDlgItem(IDC_COMBO1);
+	CComboBox* combo= ( CComboBox*)GetDlgItem(IDC_COMBO_APP);
 	nIndex = combo->GetCurSel();
+	int d=10;
+	CString s;
+//	s.Format("%d",nIndex);
+//	AfxMessageBox("  "+s);
 
 }
 
 void CBysjDlg::OnOK() 
 {
 	// TODO: Add extra validation here
-	
-	CDialog::OnOK();
-	switch(nIndex)
-	case  1:
-		KuGuan kuguan;
-		kuguan.DoModal();
-	case  2:
-		KuGuan kuguan;
-		kuguan.DoModal();
-	case  3:
-		KuGuan kuguan;
-		kuguan.DoModal();
+	UpdateData(true);
+	if(m_name.Compare("alice"))
+		return ;
+	if(m_pwd.Compare("alice"))
+		return ;
 
-			break; 
-		default: break; 
+	CDianZhang dz;
+	KuGuan kuguan;
+	Cssy ssy;
+	CDialog::OnOK();
+	switch(nIndex){
+	case  0:
+		dz.DoModal();
+		break;
+	case  1:		
+		kuguan.DoModal();
+		break;
+	case  2:		
+		ssy.DoModal();
+		break; 
+	default: 
+		break; 
 	}
 
 }
